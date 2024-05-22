@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(
+    cd "$(dirname "${BASH_SOURCE[0]}")"
+    pwd -P
+)"
+ROOT_DIR="$SCRIPT_DIR/.."
+
+mapfile -d "" -t FILES < <(
+    git diff --cached --name-only --diff-filter=d -z || kill $$
+)
+
+if [[ ${#FILES[@]} -eq 0 ]]; then
+    exit 0
+fi
+
+if (git status --porcelain | grep -Eq "^([^? ][^? ])"); then
+    echo "Found partially added file. Skipping prettify."
+else
+    (
+        cd "$ROOT_DIR"
+        npm run prettify
+    )
+
+    git add "${FILES[@]}"
+fi
+
+(
+    cd "$ROOT_DIR"
+    npm run lint
+)
