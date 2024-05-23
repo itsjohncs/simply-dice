@@ -1,0 +1,3 @@
+[submodule "external/shmeppy-public"]
+	path = external/shmeppy-public
+	url = git@github.com:itsjohncs/shmeppy-public.git

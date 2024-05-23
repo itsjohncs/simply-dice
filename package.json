@@ -12,7 +12,8 @@
     "dependencies": {
         "next": "14.2.3",
         "react": "^18",
-        "react-dom": "^18"
+        "react-dom": "^18",
+        "@shmeppy/dumb-dice-components": "*"
     },
     "devDependencies": {
         "@types/node": "^20",
@@ -22,5 +23,9 @@
         "eslint-config-next": "14.2.3",
         "prettier": "^3.2.5",
         "typescript": "^5"
-    }
+    },
+    "workspaces": [
+        "external/shmeppy-public/packages/client-utils",
+        "external/shmeppy-public/packages/dumb-dice-components"
+    ]
 }

@@ -1,6 +1,11 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 
+import ButtonWrapper from "./ButtonWrapper";
+
 export default function Home() {
-    return <main className={styles.main}>Hello world</main>;
+    return (
+        <main className={styles.main}>
+            <ButtonWrapper />
+        </main>
+    );
 }
