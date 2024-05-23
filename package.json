@@ -10,10 +10,11 @@
         "prettify": "prettier --write ."
     },
     "dependencies": {
+        "@shmeppy/client-utils": "https://gitpkg.now.sh/itsjohncs/shmeppy-public/packages/client-utils?1510f348c3a05b9553abb11492ac09884efa63af",
+        "@shmeppy/dumb-dice-components": "https://gitpkg.now.sh/itsjohncs/shmeppy-public/packages/dumb-dice-components?1510f348c3a05b9553abb11492ac09884efa63af",
         "next": "14.2.3",
         "react": "^18",
-        "react-dom": "^18",
-        "@shmeppy/dumb-dice-components": "*"
+        "react-dom": "^18"
     },
     "devDependencies": {
         "@types/node": "^20",
@@ -23,9 +24,5 @@
         "eslint-config-next": "14.2.3",
         "prettier": "^3.2.5",
         "typescript": "^5"
-    },
-    "workspaces": [
-        "external/shmeppy-public/packages/client-utils",
-        "external/shmeppy-public/packages/dumb-dice-components"
-    ]
+    }
 }
