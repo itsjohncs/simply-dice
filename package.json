@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --port 28260",
         "build": "next build",
         "start": "next start",
         "lint": "next lint && prettier --list-different .",
