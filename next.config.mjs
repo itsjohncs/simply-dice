@@ -7,16 +7,7 @@ const nextConfig = {
         "@shmeppy/client-utils",
     ],
     webpack(webpackConfig) {
-        webpackConfig.resolve.alias["@shmeppy/dumb-dice-components"] =
-            path.resolve(
-                import.meta.dirname,
-                "./node_modules/@shmeppy/dumb-dice-components",
-            );
-        webpackConfig.resolve.alias["@shmeppy/client-utils"] = path.resolve(
-            import.meta.dirname,
-            "./node_modules/@shmeppy/client-utils",
-        );
-
+        webpackConfig.resolve.symlinks = false;
         return {
             ...webpackConfig,
         };
